@@ -16,6 +16,7 @@
       <tr>
         <td><%= day.foods_eaten %></td>
         <td><%= day.symptoms %></td>
+        <td><%= day.created_at %></td>
         <td><%= link_to 'Show', day %></td>
         <td><%= link_to 'Edit', edit_day_path(day) %></td>
         <td><%= link_to 'Destroy', day, method: :delete, data: { confirm: 'Are you sure?' } %></td>
