@@ -16,3 +16,10 @@
  @import 'bootstrap-sprockets';
  @import 'bootstrap';
  @import 'font-awesome';
+
+.navbar-fixed-top {
+    background-color: rgb(100,200,100);
+}
+.body {
+  margin-top: 60px;
+}
