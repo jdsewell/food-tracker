@@ -5,6 +5,7 @@ class DaysController < ApplicationController
   # GET /days.json
   def index
     @days = Day.all
+    @today = DateTime.now
   end
 
   # GET /days/1
