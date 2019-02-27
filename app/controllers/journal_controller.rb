@@ -1,5 +1,6 @@
 class JournalController < ApplicationController
   def home
+    @today = Date.today
     Day.all.each do |day|
       if day.user_id == current_user.id && current_user.journal.include?(day) == false
         current_user.journal.push(day)

@@ -1,11 +1,17 @@
-
-<% @journal.each do |day| %>
-    <%= day.foods_eaten %>
-    <%= day.symptoms %>
-    <%= day.created_at %>
-    <%= link_to 'Show', day %>
-    <%= link_to 'Edit', edit_day_path(day) %>
-    <%= link_to 'Destroy', day, method: :delete, data: { confirm: 'Are you sure?' } %>
-<% end %>
-
-<%= link_to 'New Day', new_day_path %>
+<div class="container">
+  <%= @today %>
+</div>
+  <div class="container">
+    <div class="row">
+      <% @journal.each do |day| %>
+        <div class="col-xs-4">
+          <%= day.foods_eaten %>
+          <%= day.symptoms %>
+          <%= day.created_at %>
+          <%= link_to 'Show', day %>
+          <%= link_to 'Edit', edit_day_path(day) %>
+          <%= link_to 'Destroy', day, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </div>
+      <% end %>
+    </div>
+  </div>
