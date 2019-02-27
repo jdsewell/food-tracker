@@ -60,6 +60,10 @@ class DaysController < ApplicationController
       format.html { redirect_to days_url, notice: 'Day was successfully destroyed.' }
       format.json { head :no_content }
     end
+    if current_user.journal.include?(@day)
+      current_user.journal.delete(@day)
+      current_user.save
+    end
   end
 
   private
@@ -70,6 +74,6 @@ class DaysController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def day_params
-      params.require(:day).permit(:foods_eaten, :symptoms, :user_id)
+      params.require(:day).permit(:foods_eaten, :symptoms, :user_id, :date)
     end
 end
